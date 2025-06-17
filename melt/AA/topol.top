@@ -1,0 +1,32 @@
+;
+;	File 'topol.top' was generated
+;	By user: parvez (1000)
+;	On host: parvez-Lenovo-G50-70
+;	At date: Tue May 31 13:15:45 2016
+;
+;	This is a standalone topology file
+;
+;	It was generated using program:
+;	pdb2gmx - VERSION 4.5.5
+;
+;	Command line was:
+
+;
+;	Force field was read from current directory or a relative path - path added.
+;
+
+; Include forcefield parameters
+#include "./charmm36-jun2015new_sat_new_2021.ff/forcefield.itp"
+
+; Include chain topologies
+#include "topol_Other_chain_B.itp"
+#include "topol_Other_chain_A.itp"
+
+[ system ]
+; Name
+Protein
+
+[ molecules ]
+; Compound        #mols
+Other_chain_B       608
+Other_chain_A       2210
