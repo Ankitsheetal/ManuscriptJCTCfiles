@@ -1,0 +1,34 @@
+;
+;	File 'topol.top' was generated
+;	By user: parvez (1000)
+;	On host: parvez-Inspiron-11-3148
+;	At date: Mon Jan 18 12:30:06 2021
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	            :-) GROMACS - gmx pdb2gmx, 2020.1-Ubuntu-2020.1-1 (-:
+;	
+;	Executable:   /usr/bin/gmx
+;	Data prefix:  /usr
+;	Working dir:  /home/parvez/mmt_charmm_gromacs_periodic/large/large_saturated_new
+;	Command line:
+;	  gmx pdb2gmx -f mmt_large_sat_tma_new.pdb -o mmt_large_sat_tma_new.gro
+;	Force field was read from current directory or a relative path - path added.
+;
+
+; Include forcefield parameters
+#include "./charmm36-jun2015new_sat_new_2021.ff/forcefield.itp"
+
+; Include chain topologies
+#include "top_mmt_sat.itp"
+#include "top_tma1.itp"
+
+[ system ]
+; Name
+Protein
+
+[ molecules ]
+; Compound        #mols
+mmt_sat               1
+tma    	   160

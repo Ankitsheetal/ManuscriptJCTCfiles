@@ -1,0 +1,182 @@
+;
+;	File 'topol_Other_chain_B.itp' was generated
+;	By user: parvez (1000)
+;	On host: parvez-Inspiron-11-3148
+;	At date: Mon Jan 18 12:31:26 2021
+;
+;	This is a include topology file
+;
+;	Created by:
+;	            :-) GROMACS - gmx pdb2gmx, 2020.1-Ubuntu-2020.1-1 (-:
+;	
+;	Executable:   /usr/bin/gmx
+;	Data prefix:  /usr
+;	Working dir:  /home/parvez/mmt_charmm_gromacs_periodic/large/large_saturated_new
+;	Command line:
+;	  gmx pdb2gmx -f mmt_large_sat_tma_new.pdb -o mmt_large_sat_tma_new.gro
+;	Force field was read from current directory or a relative path - path added.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+tma    	   3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue 161 TMA rtp TMA  q +1.0
+     1        NTL    161    TMA    NAA      1       -0.6     14.007
+     2       CTL5    161    TMA    CAA      2      -0.35     12.011
+     3         HL    161    TMA    HAA      3       0.25      1.008
+     4         HL    161    TMA    HAB      4       0.25      1.008
+     5         HL    161    TMA    HAC      5       0.25      1.008
+     6       CTL5    161    TMA    CAB      6      -0.35     12.011
+     7         HL    161    TMA    HBA      7       0.25      1.008
+     8         HL    161    TMA    HBB      8       0.25      1.008
+     9         HL    161    TMA    HBC      9       0.25      1.008
+    10       CTL5    161    TMA    CAC     10      -0.35     12.011
+    11         HL    161    TMA    HCA     11       0.25      1.008
+    12         HL    161    TMA    HCB     12       0.25      1.008
+    13         HL    161    TMA    HCC     13       0.25      1.008
+    14       CTL5    161    TMA    CAD     14      -0.35     12.011
+    15         HL    161    TMA    HDA     15       0.25      1.008
+    16         HL    161    TMA    HDB     16       0.25      1.008
+    17         HL    161    TMA    HDC     17       0.25      1.008   ; qtot 1
+    
+[ bonds ]
+;  ai    aj funct            c0            c1            c2            c3
+    1     2     1 
+    1     6     1 
+    1    10     1 
+    1    14     1 
+    2     3     1 
+    2     4     1 
+    2     5     1 
+    6     7     1 
+    6     8     1 
+    6     9     1 
+   10    11     1 
+   10    12     1 
+   10    13     1 
+   14    15     1 
+   14    16     1 
+   14    17     1 
+   
+   
+[ pairs ]
+;  ai    aj funct            c0            c1            c2            c3
+    2     7     1 
+    2     8     1 
+    2     9     1 
+    2    11     1 
+    2    12     1 
+    2    13     1 
+    2    15     1 
+    2    16     1 
+    2    17     1 
+    3     6     1 
+    3    10     1 
+    3    14     1 
+    4     6     1 
+    4    10     1 
+    4    14     1 
+    5     6     1 
+    5    10     1 
+    5    14     1 
+    6    11     1 
+    6    12     1 
+    6    13     1 
+    6    15     1 
+    6    16     1 
+    6    17     1 
+    7    10     1 
+    7    14     1 
+    8    10     1 
+    8    14     1 
+    9    10     1 
+    9    14     1 
+   10    15     1 
+   10    16     1 
+   10    17     1 
+   11    14     1 
+   12    14     1 
+   13    14     1 
+   
+[ angles ]
+;  ai    aj    ak funct            c0            c1            c2            c3
+    2     1     6     5 
+    2     1    10     5 
+    2     1    14     5 
+    6     1    10     5 
+    6     1    14     5 
+   10     1    14     5 
+    1     2     3     5 
+    1     2     4     5 
+    1     2     5     5 
+    3     2     4     5 
+    3     2     5     5 
+    4     2     5     5 
+    1     6     7     5 
+    1     6     8     5 
+    1     6     9     5 
+    7     6     8     5 
+    7     6     9     5 
+    8     6     9     5 
+    1    10    11     5 
+    1    10    12     5 
+    1    10    13     5 
+   11    10    12     5 
+   11    10    13     5 
+   12    10    13     5 
+    1    14    15     5 
+    1    14    16     5 
+    1    14    17     5 
+   15    14    16     5 
+   15    14    17     5 
+   16    14    17     5 
+   
+[ dihedrals ]
+;  ai    aj    ak    al funct            c0            c1            c2            c3            c4            c5
+    6     1     2     3     9 
+    6     1     2     4     9 
+    6     1     2     5     9 
+   10     1     2     3     9 
+   10     1     2     4     9 
+   10     1     2     5     9 
+   14     1     2     3     9 
+   14     1     2     4     9 
+   14     1     2     5     9 
+    2     1     6     7     9 
+    2     1     6     8     9 
+    2     1     6     9     9 
+   10     1     6     7     9 
+   10     1     6     8     9 
+   10     1     6     9     9 
+   14     1     6     7     9 
+   14     1     6     8     9 
+   14     1     6     9     9 
+    2     1    10    11     9 
+    2     1    10    12     9 
+    2     1    10    13     9 
+    6     1    10    11     9 
+    6     1    10    12     9 
+    6     1    10    13     9 
+   14     1    10    11     9 
+   14     1    10    12     9 
+   14     1    10    13     9 
+    2     1    14    15     9 
+    2     1    14    16     9 
+    2     1    14    17     9 
+    6     1    14    15     9 
+    6     1    14    16     9 
+    6     1    14    17     9 
+   10     1    14    15     9 
+   10     1    14    16     9 
+   10     1    14    17     9    
+          
+    
+    
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_tma1.itp"
+#endif
+    
