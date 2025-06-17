@@ -1,0 +1,15 @@
+#include "martini_v2.2_new_mine_trial_real2.itp"
+#include "martini_large_clay_finite2_a_p2_p2.itp"
+#include "martini_polyethylene_gr5_nrxl2.itp"
+#include "martini_peg_nrxl2.itp"
+
+[ system ]
+; name
+CGG polymer
+
+[ molecules ]
+; name  number
+CGG        3
+PEP       2000
+PBP	  550
+
