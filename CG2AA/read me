@@ -1,0 +1,47 @@
+Instruction for CG to AA conversion
+
+1. first extact 1 CG sheet with TMA ions from CG-PNC structure (PNC_tactoid.pdb) and name it sheet1.pdb
+	sed -n '1,3040p' PNC_tactoid.pdb > sheet1.pdb
+	sed -n '3041,6080p' PNC_tactoid.pdb > sheet2.pdb
+	sed -n '6081,9120p' PNC_tactoid.pdb > sheet3.pdb
+2. divide this file (sheet1.pdb) in two parts (1) mmt_cg.pdb and (2) tma_cg.pdb
+3. Now rotate the "mmt_large_sat_tma_new2_equilibrated.pdb" AA structure file according to need.
+
+""vmd commond to rotat molecule""
+set sel [atomselect top all]
+set M [transvecinv {0 0 0}]
+$sel move $M
+set M [transaxis z 180]
+$sel move $M 
+
+save all coordinates into file "mmt_large_sat_tma_new2_equilibrated_rotated.pdb"
+
+4. then shift this "mmt_large_sat_tma_new2_equilibrated_rotated.pdb" near to CG sheet1.   (using xcordinate.pl, ycordinate.pl, zcordinate.pl ) e.g.
+perl ./xcordinate.pl -infile mmt_large_sat_tma_new2_equilibrated_rotated.pdb -add 150
+perl ./ycordinate.pl -infile mmt_large_sat_tma_new2_equilibrated_rotated.pdb.pdb -add 165
+perl ./zcordinate.pl -infile mmt_large_sat_tma_new2_equilibrated_rotated.pdb.pdb.pdb -add 50
+
+5. Now divide this "mmt_large_sat_tma_new2_equilibrated_rotated_shifted.pdb" file into (1) mmt_aa.pdb and (2) tma_aa.pdb
+6. remove chain identifiers "X" from pdb files.
+7. split -l 10116 mmt_large_sat_tma_new2_equilibrated_rotated_shifted.pdb
+	files (1) mmt_aa.pdb and (2) tma_aa.pdb
+8. make two folders, one for mmt and another for tma.
+
+cd mmt/
+./cgtoaa_partial.sh  ;;; it will only replace the coordinates of AL and SI in all-atomic file 'mmt_aa.pdb' by the coordinates of same atoms from CG sheet 'mmt_cg.pdb'
+./backmap.sh   ;;;; it will shift the coordinates of other atoms (like O, H) according to the distance b/w heavy atoms of AA and CG sheets by using another script shift.sh and LIST files.
+
+we will get converted mmt in form of file "partial1.pdb"
+
+same procedure is applied to convert CG-TMA into AA-TMA ====== 
+cd ../tma/
+./cgtoaa_partial.sh
+./backmap.sh
+
+we will get converted TMA in form of file "partial2.pdb"
+
+cat partial1.pdb partial2.pdb > mmt_tma_sat1_converted.pdb
+
+same procedure is applied for other sheets
+
+
